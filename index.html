@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bazar - Eco Tienda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="Logo.png" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <img src="Logo.png" alt="Logo Bazar" class="logo" />
+      <nav class="nav">
+        <button class="nav-link active" data-filter="all">Todos</button>
+        <button class="nav-link" data-filter="vasos">Vasos</button>
+        <button class="nav-link" data-filter="platos">Platos</button>
+        <button class="nav-link" data-filter="contenedores">Contenedores</button>
+        <button class="nav-link" data-filter="composteras">Composteras</button>
+        <button class="nav-link" data-filter="jarras">Jarras</button>
+        <button class="nav-link" data-filter="cubiertos">Cubiertos</button>
+      </nav>
+      <button id="cartButton" class="cart-button" aria-label="Abrir carrito">
+        <span>Carrito</span>
+        <span id="cartCount" class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Eco Bazar</h1>
+      <p>Productos prácticos para tu hogar con estilo y conciencia.</p>
+    </section>
+
+    <section id="productGrid" class="product-grid" aria-live="polite"></section>
+  </main>
+
+  <aside id="cartPanel" class="cart-panel" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Tu carrito</h2>
+      <button id="closeCart" class="icon-button" aria-label="Cerrar carrito">×</button>
+    </div>
+    <ul id="cartItems" class="cart-items"></ul>
+    <div class="cart-footer">
+      <div class="total-row">
+        <span>Total</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button id="checkout" class="checkout-button">Finalizar compra</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <small>© <span id="year"></span> Bazar — Hecho con amor en rosa y naranja</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
