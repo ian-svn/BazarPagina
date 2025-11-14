@@ -1,0 +1,132 @@
+.stock-page {
+  width: 100%;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-buttons button {
+  padding: 0.5rem 1rem;
+  background: #ecf0f1;
+  color: #333;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.filter-buttons button.active {
+  background: #3498db;
+  color: #fff;
+}
+
+.filter-buttons button:hover {
+  background: #bdc3c7;
+}
+
+.filter-buttons button.active:hover {
+  background: #2980b9;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product-desc {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.stock-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stock-value.ok {
+  color: #27ae60;
+}
+
+.stock-value.low {
+  color: #f39c12;
+}
+
+.stock-value.out {
+  color: #e74c3c;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.status-badge.ok {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.low {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.out {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.stock-editor {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.stock-input {
+  width: 80px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn-save {
+  padding: 0.5rem;
+  background: #27ae60;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.btn-save:hover {
+  background: #229954;
+}
+
+.btn-cancel-small {
+  padding: 0.5rem;
+  background: #e74c3c;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.btn-cancel-small:hover {
+  background: #c0392b;
+}
+
+.btn-edit-stock {
+  padding: 0.5rem 1rem;
+  background: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.btn-edit-stock:hover {
+  background: #2980b9;
+}
+
