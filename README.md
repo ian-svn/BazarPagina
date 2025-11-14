@@ -2,13 +2,40 @@
 
 Sistema completo de e-commerce público y panel de administración.
 
-## 🚀 Ejecución Rápida
+## 🚀 Inicio Rápido (Después de clonar)
 
-### Windows
-1. **Primera vez**: Doble clic en `inicializar-db.bat` (solo una vez)
-2. **Iniciar sistema**: Doble clic en `iniciar.bat`
+### Requisitos Previos
+- ✅ Node.js instalado
+- ✅ XAMPP instalado (o MySQL corriendo)
 
-### Manual
+### Pasos para Iniciar
+
+1. **Asegúrate de que XAMPP esté corriendo**
+   - Abre XAMPP Control Panel
+   - Inicia el servicio **MySQL**
+
+2. **Inicializar la base de datos** (solo primera vez)
+   - Doble clic en `inicializar-db.bat`
+   - Espera a que termine (creará la base de datos y el usuario admin)
+
+3. **Iniciar el sistema**
+   - Doble clic en `iniciar.bat`
+   - El sistema se abrirá automáticamente en http://localhost:3000
+
+### Credenciales de Administrador
+- **Usuario**: `admin`
+- **Contraseña**: `admin123`
+
+## 📝 Notas Importantes
+
+- La primera vez puede tardar varios minutos (instalación de dependencias)
+- Si el login no funciona, ejecuta `SOLUCIONAR-LOGIN.bat`
+- Cambia la contraseña del admin después del primer inicio de sesión
+
+### Instrucciones Detalladas
+Ver el archivo `INSTRUCCIONES-CLONAR.md` para instrucciones completas paso a paso.
+
+### Comandos Manuales (Opcional)
 ```bash
 # 1. Instalar dependencias (solo primera vez)
 npm install

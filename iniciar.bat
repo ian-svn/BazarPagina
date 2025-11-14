@@ -3,8 +3,37 @@ echo ========================================
 echo   MerchDecoBazar - Iniciando Sistema
 echo ========================================
 echo.
+echo IMPORTANTE: Asegurate de que XAMPP MySQL este corriendo
+echo.
 
-echo [1/4] Verificando puertos...
+echo [1/5] Verificando archivo .env...
+if not exist ".env" (
+    echo Creando archivo .env...
+    (
+        echo # Database Configuration
+        echo DB_HOST=localhost
+        echo DB_USER=root
+        echo DB_PASSWORD=
+        echo DB_NAME=sistema_bazar
+        echo DB_PORT=3306
+        echo.
+        echo # JWT Secret
+        echo JWT_SECRET=merchdecobazar_secret_key_2024_cambiar_en_produccion
+        echo.
+        echo # Server Configuration
+        echo PORT=5000
+        echo NODE_ENV=development
+        echo.
+        echo # Frontend URL
+        echo CLIENT_URL=http://localhost:3000
+    ) > .env
+    echo Archivo .env creado.
+) else (
+    echo Archivo .env existe.
+)
+
+echo.
+echo [2/5] Verificando puertos...
 netstat -ano | findstr :3000 >nul 2>&1
 if %errorlevel% equ 0 (
     echo Puerto 3000 esta en uso. Liberando puerto...
@@ -30,7 +59,7 @@ if %errorlevel% equ 0 (
 )
 
 echo.
-echo [2/4] Verificando dependencias del backend...
+echo [3/5] Verificando dependencias del backend...
 if not exist "node_modules" (
     echo Instalando dependencias del backend...
     call npm install
@@ -44,7 +73,7 @@ if not exist "node_modules" (
 )
 
 echo.
-echo [3/4] Verificando dependencias del frontend...
+echo [4/5] Verificando dependencias del frontend...
 if not exist "client\node_modules" (
     echo Instalando dependencias del frontend...
     cd client
@@ -60,7 +89,7 @@ if not exist "client\node_modules" (
 )
 
 echo.
-echo [4/4] Iniciando servidor...
+echo [5/5] Iniciando servidor...
 echo.
 echo ========================================
 echo   Sistema iniciado correctamente!
