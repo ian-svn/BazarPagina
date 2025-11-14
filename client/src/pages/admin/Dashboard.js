@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../config/axios';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -18,10 +18,10 @@ const Dashboard = () => {
   const fetchStats = async () => {
     try {
       const [ventasRes, productosRes, pedidosRes, clientesRes] = await Promise.all([
-        axios.get('/api/ventas'),
-        axios.get('/api/productos'),
-        axios.get('/api/pedidos'),
-        axios.get('/api/clientes')
+        api.get('/api/ventas'),
+        api.get('/api/productos'),
+        api.get('/api/pedidos'),
+        api.get('/api/clientes')
       ]);
 
       const totalVentas = ventasRes.data.reduce((sum, v) => sum + parseFloat(v.total), 0);

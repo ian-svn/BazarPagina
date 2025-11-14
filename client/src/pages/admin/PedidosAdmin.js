@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../config/axios';
 import './PedidosAdmin.css';
 
 const PedidosAdmin = () => {
@@ -13,7 +13,7 @@ const PedidosAdmin = () => {
 
   const fetchPedidos = async () => {
     try {
-      const response = await axios.get('/api/pedidos');
+      const response = await api.get('/api/pedidos');
       setPedidos(response.data);
     } catch (error) {
       console.error('Error al cargar pedidos:', error);
@@ -24,7 +24,7 @@ const PedidosAdmin = () => {
 
   const handleEstadoChange = async (id, nuevoEstado) => {
     try {
-      await axios.put(`/api/pedidos/${id}/estado`, { estado: nuevoEstado });
+      await api.put(`/api/pedidos/${id}/estado`, { estado: nuevoEstado });
       fetchPedidos();
     } catch (error) {
       console.error('Error al actualizar estado:', error);
@@ -34,7 +34,7 @@ const PedidosAdmin = () => {
 
   const handleViewDetails = async (id) => {
     try {
-      const response = await axios.get(`/api/pedidos/${id}`);
+      const response = await api.get(`/api/pedidos/${id}`);
       setSelectedPedido(response.data);
     } catch (error) {
       console.error('Error al cargar detalles:', error);

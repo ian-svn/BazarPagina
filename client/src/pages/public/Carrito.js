@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
-import axios from 'axios';
+import api from '../../config/axios';
 import './Carrito.css';
 
 const Carrito = () => {
@@ -19,7 +19,7 @@ const Carrito = () => {
       // Crear o buscar cliente
       let clienteId = null;
       if (cliente.nombre) {
-        const clienteResponse = await axios.post('/api/clientes', cliente);
+        const clienteResponse = await api.post('/api/clientes', cliente);
         clienteId = clienteResponse.data.id;
       }
 
@@ -33,7 +33,7 @@ const Carrito = () => {
         }))
       };
 
-      await axios.post('/api/ventas/public', ventaData);
+      await api.post('/api/ventas/public', ventaData);
       
       alert('¡Pedido realizado exitosamente!');
       clearCart();

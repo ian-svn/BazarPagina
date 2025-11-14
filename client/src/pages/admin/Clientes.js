@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../config/axios';
 import './Clientes.css';
 
 const Clientes = () => {
@@ -20,7 +20,7 @@ const Clientes = () => {
 
   const fetchClientes = async () => {
     try {
-      const response = await axios.get('/api/clientes');
+      const response = await api.get('/api/clientes');
       setClientes(response.data);
     } catch (error) {
       console.error('Error al cargar clientes:', error);
@@ -33,9 +33,9 @@ const Clientes = () => {
     e.preventDefault();
     try {
       if (editingCliente) {
-        await axios.put(`/api/clientes/${editingCliente.id_cliente}`, formData);
+        await api.put(`/api/clientes/${editingCliente.id_cliente}`, formData);
       } else {
-        await axios.post('/api/clientes', formData);
+        await api.post('/api/clientes', formData);
       }
       fetchClientes();
       setShowModal(false);
@@ -60,7 +60,7 @@ const Clientes = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('¿Estás seguro de eliminar este cliente?')) return;
     try {
-      await axios.delete(`/api/clientes/${id}`);
+      await api.delete(`/api/clientes/${id}`);
       fetchClientes();
     } catch (error) {
       console.error('Error al eliminar cliente:', error);

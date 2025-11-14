@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../config/axios';
 import './ProductosAdmin.css';
 
 const ProductosAdmin = () => {
@@ -24,7 +24,7 @@ const ProductosAdmin = () => {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get('/api/productos');
+      const response = await api.get('/api/productos');
       setProductos(response.data);
     } catch (error) {
       console.error('Error al cargar productos:', error);
@@ -35,7 +35,7 @@ const ProductosAdmin = () => {
 
   const fetchProveedores = async () => {
     try {
-      const response = await axios.get('/api/proveedores');
+      const response = await api.get('/api/proveedores');
       setProveedores(response.data);
     } catch (error) {
       console.error('Error al cargar proveedores:', error);
@@ -46,9 +46,9 @@ const ProductosAdmin = () => {
     e.preventDefault();
     try {
       if (editingProducto) {
-        await axios.put(`/api/productos/${editingProducto.id_producto}`, formData);
+        await api.put(`/api/productos/${editingProducto.id_producto}`, formData);
       } else {
-        await axios.post('/api/productos', formData);
+        await api.post('/api/productos', formData);
       }
       fetchProductos();
       setShowModal(false);
@@ -75,7 +75,7 @@ const ProductosAdmin = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('¿Estás seguro de eliminar este producto?')) return;
     try {
-      await axios.delete(`/api/productos/${id}`);
+      await api.delete(`/api/productos/${id}`);
       fetchProductos();
     } catch (error) {
       console.error('Error al eliminar producto:', error);

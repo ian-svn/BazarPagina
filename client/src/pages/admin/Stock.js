@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../config/axios';
 import './Stock.css';
 
 const Stock = () => {
@@ -13,7 +13,7 @@ const Stock = () => {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get('/api/productos');
+      const response = await api.get('/api/productos');
       setProductos(response.data);
     } catch (error) {
       console.error('Error al cargar productos:', error);
@@ -25,7 +25,7 @@ const Stock = () => {
   const handleStockUpdate = async (id, nuevoStock) => {
     try {
       const producto = productos.find(p => p.id_producto === id);
-      await axios.put(`/api/productos/${id}`, {
+      await api.put(`/api/productos/${id}`, {
         ...producto,
         stock: nuevoStock
       });

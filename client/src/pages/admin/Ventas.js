@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../config/axios';
 import './Ventas.css';
 
 const Ventas = () => {
@@ -23,7 +23,7 @@ const Ventas = () => {
 
   const fetchVentas = async () => {
     try {
-      const response = await axios.get('/api/ventas');
+      const response = await api.get('/api/ventas');
       setVentas(response.data);
     } catch (error) {
       console.error('Error al cargar ventas:', error);
@@ -34,7 +34,7 @@ const Ventas = () => {
 
   const fetchClientes = async () => {
     try {
-      const response = await axios.get('/api/clientes');
+      const response = await api.get('/api/clientes');
       setClientes(response.data);
     } catch (error) {
       console.error('Error al cargar clientes:', error);
@@ -43,7 +43,7 @@ const Ventas = () => {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get('/api/productos');
+      const response = await api.get('/api/productos');
       setProductos(response.data);
     } catch (error) {
       console.error('Error al cargar productos:', error);
@@ -52,7 +52,7 @@ const Ventas = () => {
 
   const handleViewDetails = async (id) => {
     try {
-      const response = await axios.get(`/api/ventas/${id}`);
+      const response = await api.get(`/api/ventas/${id}`);
       setSelectedVenta(response.data);
     } catch (error) {
       console.error('Error al cargar detalles:', error);
@@ -82,7 +82,7 @@ const Ventas = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/ventas', formData);
+      await api.post('/api/ventas', formData);
       fetchVentas();
       setShowModal(false);
       setFormData({ id_cliente: '', forma_pago: 'efectivo', productos: [] });

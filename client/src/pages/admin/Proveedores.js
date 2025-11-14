@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../config/axios';
 import './Proveedores.css';
 
 const Proveedores = () => {
@@ -20,7 +20,7 @@ const Proveedores = () => {
 
   const fetchProveedores = async () => {
     try {
-      const response = await axios.get('/api/proveedores');
+      const response = await api.get('/api/proveedores');
       setProveedores(response.data);
     } catch (error) {
       console.error('Error al cargar proveedores:', error);
@@ -33,9 +33,9 @@ const Proveedores = () => {
     e.preventDefault();
     try {
       if (editingProveedor) {
-        await axios.put(`/api/proveedores/${editingProveedor.id_proveedor}`, formData);
+        await api.put(`/api/proveedores/${editingProveedor.id_proveedor}`, formData);
       } else {
-        await axios.post('/api/proveedores', formData);
+        await api.post('/api/proveedores', formData);
       }
       fetchProveedores();
       setShowModal(false);
@@ -60,7 +60,7 @@ const Proveedores = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('¿Estás seguro de eliminar este proveedor?')) return;
     try {
-      await axios.delete(`/api/proveedores/${id}`);
+      await api.delete(`/api/proveedores/${id}`);
       fetchProveedores();
     } catch (error) {
       console.error('Error al eliminar proveedor:', error);

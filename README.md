@@ -1,4 +1,4 @@
-# MerchDecoBazar - Sistema de E-commerce
+# 🛍️ MerchDecoBazar - Sistema de E-commerce
 
 Sistema completo de e-commerce público y panel de administración.
 
@@ -26,39 +26,21 @@ Sistema completo de e-commerce público y panel de administración.
 - **Usuario**: `admin`
 - **Contraseña**: `admin123`
 
-## 📝 Notas Importantes
+## 🌐 Hosting en la Nube
 
-- La primera vez puede tardar varios minutos (instalación de dependencias)
-- Si el login no funciona, ejecuta `SOLUCIONAR-LOGIN.bat`
-- Cambia la contraseña del admin después del primer inicio de sesión
+**GitHub Pages NO funciona** para esta aplicación (necesita backend y base de datos).
 
-### Instrucciones Detalladas
-Ver el archivo `INSTRUCCIONES-CLONAR.md` para instrucciones completas paso a paso.
+### Opciones Recomendadas:
+- **Vercel + PlanetScale** (Recomendado) - Ver `DEPLOY-VERCEL.md`
+- **Railway** (Todo en uno) - Ver `DEPLOY-RAILWAY.md`
+- **Render** - Ver `HOSTING.md`
 
-### Comandos Manuales (Opcional)
-```bash
-# 1. Instalar dependencias (solo primera vez)
-npm install
-cd client && npm install && cd ..
-
-# 2. Inicializar base de datos (solo primera vez)
-node server/scripts/init-db.js
-
-# 3. Iniciar sistema
-npm run dev
-```
-
-## 🌐 Acceso
-
-- **E-commerce**: http://localhost:3000
-- **Panel Admin**: http://localhost:3000/admin/login
-  - Usuario: `admin`
-  - Contraseña: `admin123`
+Ver `README-HOSTING.md` para comparación de opciones.
 
 ## 📋 Requisitos
 
 - Node.js (v14+)
-- MySQL (v5.7+)
+- MySQL (v5.7+) o XAMPP
 - MySQL debe estar corriendo antes de iniciar
 
 ## ⚙️ Configuración
@@ -67,9 +49,10 @@ Edita `.env` si necesitas cambiar:
 - Credenciales de MySQL
 - Puerto del servidor (default: 5000)
 
-## 📝 Notas
+## 📝 Notas Importantes
 
-- El script de inicialización crea la base de datos y productos de ejemplo automáticamente
+- La primera vez puede tardar varios minutos (instalación de dependencias)
+- Si el login no funciona, ejecuta `SOLUCIONAR-LOGIN.bat`
 - Cambia la contraseña del admin después del primer inicio de sesión
 
 ## 🔧 Solución de Problemas
@@ -83,3 +66,11 @@ Edita `.env` si necesitas cambiar:
 ### Credenciales por defecto:
 - Usuario: `admin`
 - Contraseña: `admin123`
+
+## 📚 Documentación Adicional
+
+- `INSTRUCCIONES-CLONAR.md` - Instrucciones detalladas para clonar
+- `DEPLOY-VERCEL.md` - Guía completa para deploy en Vercel
+- `DEPLOY-RAILWAY.md` - Guía completa para deploy en Railway
+- `HOSTING.md` - Información general de hosting
+- `README-HOSTING.md` - Comparación de opciones de hosting

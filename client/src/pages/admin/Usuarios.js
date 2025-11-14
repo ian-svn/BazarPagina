@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../config/axios';
 import './Usuarios.css';
 
 const Usuarios = () => {
@@ -20,7 +20,7 @@ const Usuarios = () => {
 
   const fetchUsuarios = async () => {
     try {
-      const response = await axios.get('/api/usuarios');
+      const response = await api.get('/api/usuarios');
       setUsuarios(response.data);
     } catch (error) {
       console.error('Error al cargar usuarios:', error);
@@ -33,9 +33,9 @@ const Usuarios = () => {
     e.preventDefault();
     try {
       if (editingUsuario) {
-        await axios.put(`/api/usuarios/${editingUsuario.id_usuario}`, formData);
+        await api.put(`/api/usuarios/${editingUsuario.id_usuario}`, formData);
       } else {
-        await axios.post('/api/usuarios', formData);
+        await api.post('/api/usuarios', formData);
       }
       fetchUsuarios();
       setShowModal(false);
@@ -60,7 +60,7 @@ const Usuarios = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('¿Estás seguro de eliminar este usuario?')) return;
     try {
-      await axios.delete(`/api/usuarios/${id}`);
+      await api.delete(`/api/usuarios/${id}`);
       fetchUsuarios();
     } catch (error) {
       console.error('Error al eliminar usuario:', error);

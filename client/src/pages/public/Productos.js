@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../config/axios';
 import { useCart } from '../../context/CartContext';
 import './Productos.css';
 
@@ -14,7 +14,7 @@ const Productos = () => {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get('/api/productos');
+      const response = await api.get('/api/productos');
       setProductos(response.data);
     } catch (error) {
       console.error('Error al cargar productos:', error);

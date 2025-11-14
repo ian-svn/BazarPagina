@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../../config/axios';
 import './PedidoPersonalizado.css';
 
 const PedidoPersonalizado = () => {
@@ -20,7 +20,7 @@ const PedidoPersonalizado = () => {
       // Crear cliente si se proporciona información
       let clienteId = null;
       if (formData.nombre) {
-        const clienteResponse = await axios.post('/api/clientes', {
+        const clienteResponse = await api.post('/api/clientes', {
           nombre: formData.nombre,
           telefono: formData.telefono || null,
           email: formData.email || null
@@ -29,7 +29,7 @@ const PedidoPersonalizado = () => {
       }
 
       // Crear pedido personalizado
-      await axios.post('/api/pedidos', {
+      await api.post('/api/pedidos', {
         id_cliente: clienteId,
         descripcion: formData.descripcion
       });
