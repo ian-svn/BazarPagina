@@ -1,0 +1,14 @@
+.usuarios-page {
+  width: 100%;
+}
+
+.rol-badge {
+  padding: 0.25rem 0.75rem;
+  background: #3498db;
+  color: #fff;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+

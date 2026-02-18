@@ -1,0 +1,112 @@
+.ventas-page {
+  width: 100%;
+}
+
+.btn-view {
+  padding: 0.5rem 1rem;
+  background: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.btn-view:hover {
+  background: #2980b9;
+}
+
+.venta-details {
+  margin: 1.5rem 0;
+}
+
+.venta-details p {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.venta-details h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.details-table th,
+.details-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.details-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+}
+
+.total-section {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 5px;
+  text-align: right;
+  font-size: 1.25rem;
+}
+
+.modal-content.large {
+  max-width: 800px;
+}
+
+.productos-section {
+  margin: 1.5rem 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.btn-add {
+  padding: 0.5rem 1rem;
+  background: #27ae60;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.btn-add:hover {
+  background: #229954;
+}
+
+.producto-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.producto-row select,
+.producto-row input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.btn-remove {
+  padding: 0.5rem 1rem;
+  background: #e74c3c;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.btn-remove:hover {
+  background: #c0392b;
+}
+
